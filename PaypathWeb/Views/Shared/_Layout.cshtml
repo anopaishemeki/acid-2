@@ -1,0 +1,113 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACID</title>
+    <!-- favicon  -->
+    <link rel="shortcut icon" href="~/assets/images/favicon.png" type="image/x-icon">
+    <!-- faremwork of css -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap-lib/bootstrap.min.css">
+    <!-- style sheet of css        -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <!-- Responsive sheet of css -->
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+    <!-- fonts awsome icon link            -->
+    <link rel="stylesheet" href="~/assets/font-awesome-lib/icon/font-awesome.min.css">
+    <!-- slick-slider link css -->
+    <link rel="stylesheet" href="~/assets/css/slick.min.css">
+    <!-- animation of css -->
+    <link rel="stylesheet" href="~/assets/css/aos.css">
+</head>
+<body>
+    <div class="site-wrapper">
+
+        <partial name="_Header" />
+
+
+
+        @* main content *@
+        @RenderBody()
+
+
+        <partial name="_Footer" />
+
+    </div>
+    <!-- end site wrapper -->
+    <!-- button back to top -->
+    <button onclick="scrollToTop()" id="backToTopBtn"><i class="fa-solid fa-arrow-turn-up"></i></button>
+
+    <!-- bootstrap min javascript -->
+    <script src="~/assets/js/javascript-lib/bootstrap.min.js"></script>
+    <!-- j Query -->
+    <script src="~/assets/js/jquery.js"></script>
+    <!-- slick slider js -->
+    <script src="~/assets/js/slick.min.js"></script>
+    <!-- main javascript -->
+    <script src="~/assets/js/custom.js"></script>
+    <!-- counter javascript file -->
+    <script src="~/assets/js/waypoints.min.js"></script>
+    <!-- animation from javascript -->
+    <script src="~/assets/js/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 1500,
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#footer-sub2').submit(function (e) {
+                e.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("SubmitNewsletter", "Home")',
+                    data: formData,
+                    success: function (response) {
+                        if (response.status) {
+                            let form = document.getElementById('footer-sub2');
+                            let successMessage = document.getElementById('Succes-box2');
+                            successMessage.innerHTML = response.message;
+                            successMessage.style.display = 'block'
+                            form.reset()
+                            setTimeout(() => {
+                                successMessage.style.display = 'none'
+                            }, 4000)
+                        } else {
+                            let form = document.getElementById('footer-sub2');
+                            let successMessage = document.getElementById('Succes-box2');
+                            successMessage.innerHTML = response.message;
+                            successMessage.style.display = 'block'
+                            form.reset()
+                            setTimeout(() => {
+                                successMessage.style.display = 'none'
+                            }, 4000)
+                        }
+                    },
+                    error: function (error) {
+                        console.error("Error:", error);
+                        let form = document.getElementById('footer-sub2');
+                        let successMessage = document.getElementById('Succes-box2');
+                        successMessage.innerHTML = error.message;
+                        successMessage.style.display = 'block'
+                        form.reset()
+                        setTimeout(() => {
+                            successMessage.style.display = 'none'
+                        }, 4000)
+                    }
+                });
+            });
+        })
+    </script>
+
+</body>
+
+</html>
+

@@ -1,0 +1,199 @@
+﻿ @model ContactForm
+
+<div class="first_nav_hero_about">
+    <!-- ======== 5.1. contact-hero section ========  -->
+    <div class="container">
+        <div class="contact-hero">
+            <h2 class="text-center">CONTACT</h2>
+            <P class="text-center">Get in touch.</P>
+        </div>
+    </div>
+
+    <!-- ======== End of 5.1. contact-hero section ========  -->
+</div>
+<section class="d-flex justify-content-center">
+    <div class="help position-relative">
+        <div class="container">
+            <div class="row d-flex gap-lg-5 gap-md-3 gap-sm-4 gap-3 justify-content-center">
+                <div class="col-lg-5 col-md-5 help-crd1" data-aos="fade-down"
+                     data-aos-easing="linear"
+                     data-aos-duration="1500">
+                    <h4>HOW CAN WE HELP?</h4>
+                    <P>Whenever you need us, we are here for you and your banking needs </P>
+                    <div class="d-flex gap-4 align-items-center">
+                        <i class="fa-solid fa-house"></i>
+                        <span>
+                            No. 95 First Rd, Farmall / Kya Sand
+                            Johannesburg, 2194
+                        </span>
+                    </div>
+                    <div class="d-flex gap-4 align-items-center">
+                        <i class="fa-solid fa-phone"></i>
+                        <span>  087 109 2243 OR 010 054 6231</span>
+                    </div>
+                    <div class="d-flex gap-4 align-items-center">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>  info@acid.africa</span>
+                    </div>
+                    <h5>OPERATING HOURS</h5>
+                    <div class="d-flex gap-4 align-items-center">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>Monday To Friday <br> 8.00am – 5.00pm CAT</span>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-5 contact-email" data-aos="fade-down"
+                     data-aos-easing="linear"
+                     data-aos-duration="1500">
+                    <h4>EMAIL US</h4>
+                    @*                     <form asp-controller="Contact" asp-action="Create">
+                    <div class="row justify-content-center gap-3">
+                    <input asp-for="Name" class="col-md-5 col-sm-12 col-12" placeholder="Your Name">
+                    <input asp-for="Email" class="col-md-5 col-sm-12 col-12" placeholder="Email Address">
+                    <div class="row">
+                    <div class="col-md-6">
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    </div>
+                    <input asp-for="PhoneNo" class="col-md-5 col-sm-12 col-12" placeholder="Phone Number">
+                    <input asp-for="Subject" class="col-md-5 col-sm-12 col-12" placeholder="Subject">
+                    <div class="row">
+                    <div class="col-md-6">
+                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-6">
+                    <span asp-validation-for="Subject" class="text-danger"></span>
+                    </div>
+                    </div>
+                    <textarea class="col-md-11 col-12" asp-for="Message" cols="30" rows="10" placeholder="Write here message"></textarea>
+                    <div class="row">
+                    <div class="col-md-6">
+                    <span asp-validation-for="Message" class="text-danger"></span>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="d-flex justify-content-center mt-4">
+                    <button class=" e-btn btn-hover1" type="submit">Submit</button>
+                    </div>
+                    </form> *@
+
+                    @* Through AJAX *@
+                    <form id="footer-sub">
+                        <div class="row justify-content-center gap-3">
+                            <input asp-for="Name" class="col-md-5 col-sm-12 col-12" placeholder="Your Name">
+                            <input asp-for="Email" class="col-md-5 col-sm-12 col-12" placeholder="Email Address">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span asp-validation-for="Name" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <input asp-for="PhoneNo" class="col-md-5 col-sm-12 col-12" placeholder="Phone Number">
+                            <input asp-for="Subject" class="col-md-5 col-sm-12 col-12" placeholder="Subject">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span asp-validation-for="PhoneNo" class="text-danger"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <span asp-validation-for="Subject" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <textarea class="col-md-11 col-12" asp-for="Message" cols="30" rows="10" placeholder="Write here message"></textarea>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span asp-validation-for="Message" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-center mt-4">
+                            <button class=" e-btn btn-hover1" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <div id="Succes-box"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="map">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d896.4244251730431!2d27.953481369571467!3d-26.01071829857477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e957648b2c43fa3%3A0x9adecd04830ddc87!2s95%20First%20Rd%2C%20Khaya%20Sands%2C%20Farmall%2C%201747%2C%20South%20Africa!5e0!3m2!1sen!2szw!4v1719918770045!5m2!1sen!2szw" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<!-- ======== End of 5.1. map help section ========  -->
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#footer-sub').submit(function (e) {
+            e.preventDefault();
+
+            // var name = $('#contact-form input[name="Name"]').val(); // Get value from input field
+            // var email = $('#contact-form input[name="Email"]').val();
+            // var phoneNo = $('#contact-form textarea[name="PhoneNo"]').val();
+            // var subject = $('#contact-form textarea[name="Subject"]').val();
+            // var message = $('#contact-form textarea[name="Message"]').val();
+
+            var formData = $(this).serialize();
+            var formObject = {};
+            formData.split('&').forEach(function (item) {
+                var keyValue = item.split('=');
+                formObject[keyValue[0]] = decodeURIComponent(keyValue[1]);
+            });
+            console.log(formObject);
+
+
+            if (formObject.Name && formObject.Email && formObject.PhoneNo && formObject.Subject && formObject.Message) {
+                // if (name !== "" && email !== "" && phoneNo !== "" && subject !== "" && message !== "" ) {
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Create", "Contact")',
+                    // data: { name: name, email: email, phoneNo: phoneNo, subject: subject, message: message },
+                    data: formData,
+
+                    success: function (response) {
+                        if (response.status) {
+                            let form = document.getElementById('footer-sub');
+                            let successMessage = document.getElementById('Succes-box');
+                            successMessage.innerHTML = response.message;
+                            successMessage.style.display = 'block'
+                            form.reset()
+                            setTimeout(() => {
+                                successMessage.style.display = 'none'
+                            }, 4000)
+                        } else {
+                            let form = document.getElementById('footer-sub');
+                            let successMessage = document.getElementById('Succes-box');
+                            successMessage.innerHTML = response.message;
+                            successMessage.style.display = 'block'
+                            form.reset()
+                            setTimeout(() => {
+                                successMessage.style.display = 'none'
+                            }, 4000)
+                        }
+                    },
+                    error: function (error) {
+                        console.error("Error:", error);
+                        let form = document.getElementById('footer-sub');
+                        let successMessage = document.getElementById('Succes-box');
+                        successMessage.innerHTML = error.message;
+                        successMessage.style.display = 'block'
+                        form.reset()
+                        setTimeout(() => {
+                            successMessage.style.display = 'none'
+                        }, 4000)
+                    }
+                });
+            }
+        });
+    })
+</script>
