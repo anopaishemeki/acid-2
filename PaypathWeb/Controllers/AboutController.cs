@@ -2,11 +2,11 @@
 
 namespace PaypathWeb.Controllers
 {
-    public class CompanyController : Controller
+    public class AboutController : Controller
     {
-        private readonly ILogger<CompanyController> _logger;
+        private readonly ILogger<AboutController> _logger;
 
-        public CompanyController(ILogger<CompanyController> logger)
+        public AboutController(ILogger<AboutController> logger)
         {
             _logger = logger;
         }
